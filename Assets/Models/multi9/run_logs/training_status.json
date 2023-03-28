@@ -1,0 +1,66 @@
+{
+    "Battlespace": {
+        "checkpoints": [
+            {
+                "steps": 94999883,
+                "file_path": "results\\multi9\\Battlespace\\Battlespace-94999883.onnx",
+                "reward": 0.15949999913573265,
+                "creation_time": 1679261484.4847987,
+                "auxillary_file_paths": [
+                    "results\\multi9\\Battlespace\\Battlespace-94999883.pt"
+                ]
+            },
+            {
+                "steps": 95499740,
+                "file_path": "results\\multi9\\Battlespace\\Battlespace-95499740.onnx",
+                "reward": 0.3011052694759871,
+                "creation_time": 1679265720.8996515,
+                "auxillary_file_paths": [
+                    "results\\multi9\\Battlespace\\Battlespace-95499740.pt"
+                ]
+            },
+            {
+                "steps": 95999835,
+                "file_path": "results\\multi9\\Battlespace\\Battlespace-95999835.onnx",
+                "reward": 1.2134999804198743,
+                "creation_time": 1679269970.9595606,
+                "auxillary_file_paths": [
+                    "results\\multi9\\Battlespace\\Battlespace-95999835.pt"
+                ]
+            },
+            {
+                "steps": 96499753,
+                "file_path": "results\\multi9\\Battlespace\\Battlespace-96499753.onnx",
+                "reward": 0.27030645516671,
+                "creation_time": 1679274253.7047226,
+                "auxillary_file_paths": [
+                    "results\\multi9\\Battlespace\\Battlespace-96499753.pt"
+                ]
+            },
+            {
+                "steps": 96517378,
+                "file_path": "results\\multi9\\Battlespace\\Battlespace-96517378.onnx",
+                "reward": 0.2672399999946356,
+                "creation_time": 1679274409.6576948,
+                "auxillary_file_paths": [
+                    "results\\multi9\\Battlespace\\Battlespace-96517378.pt"
+                ]
+            }
+        ],
+        "elo": 40338.12469786191,
+        "final_checkpoint": {
+            "steps": 96517378,
+            "file_path": "results\\multi9\\Battlespace.onnx",
+            "reward": 0.2672399999946356,
+            "creation_time": 1679274409.6576948,
+            "auxillary_file_paths": [
+                "results\\multi9\\Battlespace\\Battlespace-96517378.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
