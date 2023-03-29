@@ -33,6 +33,10 @@ public class BattleEnvController : MonoBehaviour
     [HideInInspector]
     public float FieldSize;
     private float SpawnRange;
+    public float MinSpawnHeight = 10f;
+    public float MaxSpawnHeight = 100f;
+    public float MinSpawnSpeed = 20f;
+    public float MaxSpawnSpeed = 40f;
     public float WinnerReward = 1;
     public float LoserPenalty = -1;
     public float HitPlaneReward = 1;
@@ -134,11 +138,11 @@ public class BattleEnvController : MonoBehaviour
             Quaternion newRot;
             // quadrant 3
             if (item.Agent.team == Team.Red) {
-                newStartPos = new Vector3(Random.Range(-SpawnRange, 0), 0.3f, Random.Range(-SpawnRange, 0));
-                newRot = Quaternion.Euler(0, Random.Range(0, 90), 0);
+                newStartPos = new Vector3(Random.Range(-SpawnRange, 0), Random.Range(MinSpawnHeight, MaxSpawnHeight), Random.Range(-SpawnRange, 0));
+                newRot = Quaternion.Euler(-10, Random.Range(0, 90), 0);
             } else { // quadrant 1
-                newStartPos = new Vector3(Random.Range(0, SpawnRange), 0.3f, Random.Range(0, SpawnRange));
-                newRot = Quaternion.Euler(0, Random.Range(-180, -90), 0);
+                newStartPos = new Vector3(Random.Range(0, SpawnRange), Random.Range(MinSpawnHeight, MaxSpawnHeight), Random.Range(0, SpawnRange));
+                newRot = Quaternion.Euler(-10, Random.Range(-180, -90), 0);
             }
             item.Agent.transform.position = newStartPos;
             item.Agent.transform.rotation = newRot;
@@ -146,12 +150,12 @@ public class BattleEnvController : MonoBehaviour
             item.Rb.velocity = Vector3.zero;
             item.Rb.angularVelocity = Vector3.zero;
             item.Agent.gameObject.SetActive(true);
+            item.Rb.AddForce(item.Rb.transform.forward * Random.Range(MinSpawnSpeed, MaxSpawnSpeed), ForceMode.VelocityChange);
         }
 
         // Reset Bases
-        Debug.Log(SpawnRange);
-        RedBase.transform.position = new Vector3(Random.Range(-SpawnRange, 0), Random.Range(25f, 75f), Random.Range(-SpawnRange, 0));
-        BlueBase.transform.position = new Vector3(Random.Range(0, SpawnRange), Random.Range(25f, 75f), Random.Range(0, SpawnRange));
+        RedBase.transform.position = new Vector3(Random.Range(-SpawnRange, 0), Random.Range(MinSpawnHeight, MaxSpawnHeight), Random.Range(-SpawnRange, 0));
+        BlueBase.transform.position = new Vector3(Random.Range(0, SpawnRange), Random.Range(MinSpawnHeight, MaxSpawnHeight), Random.Range(0, SpawnRange));
 
         // Reset Camera
         SpectatorCam.ResetCam();

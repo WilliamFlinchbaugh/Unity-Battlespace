@@ -105,6 +105,10 @@ public class FlightAgent : Agent {
         if (!Living) {
             return;
         }
+        
+        if (this.gameObject.name == "Red_Plane1") {
+            Debug.Log("Vel: " + rb.velocity + ", Pos: " + this.transform.position);
+        }
 
         // Apply actions
         var continuousActions = actions.ContinuousActions;
